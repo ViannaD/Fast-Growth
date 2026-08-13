@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.example.fastgrowth.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlockBehaviourInvokerMixin",
+    "FastGrowthMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
