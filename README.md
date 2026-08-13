@@ -53,12 +53,13 @@ if (hasDayNightCycle && !level.isDay()) {
 Em `FastGrowthMod.java`:
 
 ```java
-public static final int EXTRA_RANDOM_TICKS = 6; // 6 = ~7x mais rápido
+public static final int EXTRA_RANDOM_TICKS = 1; // 1 = 2x mais rápido (o dobro)
 ```
 
 - `0` → crescimento normal (vanilla).
+- `1` (padrão) → 2x mais rápido (o dobro).
 - `2` → ~3x mais rápido.
-- `6` (padrão) → ~7x mais rápido.
+- `6` → ~7x mais rápido.
 - `20+` → crescimento quase instantâneo.
 
 ## Adicionando/removendo plantas

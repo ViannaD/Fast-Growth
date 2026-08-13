@@ -30,11 +30,11 @@ public class FastGrowthMod implements ModInitializer {
 
 	/**
 	 * Quantos ticks de crescimento EXTRAS simular a cada random tick real.
-	 * 0 = comportamento vanilla. 6 = crescimento em media ~7x mais rapido.
+	 * 0 = comportamento vanilla. 1 = crescimento 2x mais rapido (o dobro).
 	 * Aumente para plantar e colher quase instantaneamente, ou diminua para
 	 * um efeito mais sutil.
 	 */
-	public static final int EXTRA_RANDOM_TICKS = 6;
+	public static final int EXTRA_RANDOM_TICKS = 1;
 
 	/**
 	 * Todos os blocos de plantacao afetados. Adicione ou remova blocos aqui
