@@ -42,7 +42,7 @@ public abstract class FastGrowthMixin {
 		}
 
 		boolean hasDayNightCycle = level.dimensionType().hasSkyLight();
-		if (hasDayNightCycle && !level.isDay()) {
+		if (hasDayNightCycle && !fastgrowth$isDaytime(level)) {
 			// Dimensao com ciclo de dia/noite (ex.: Overworld) e agora e noite:
 			// nao aplica o bonus, deixa crescer na velocidade vanilla normal.
 			return;
@@ -52,5 +52,17 @@ public abstract class FastGrowthMixin {
 		for (int i = 0; i < FastGrowthMod.EXTRA_RANDOM_TICKS; i++) {
 			invoker.fastgrowth$invokeRandomTick(state, level, pos, random);
 		}
+	}
+
+	/**
+	 * Calcula se e dia diretamente pelo relogio do mundo, em vez de depender
+	 * de um metodo como "isDay()" cujo nome pode variar entre builds das
+	 * Mojang Mappings. getDayTime() e um contador de ticks que reinicia a
+	 * cada 24000 ticks (1 dia): 0-12000 = dia (amanhecer ao anoitecer),
+	 * 12000-24000 = noite.
+	 */
+	private static boolean fastgrowth$isDaytime(ServerLevel level) {
+		long timeOfDay = level.getDayTime() % 24000L;
+		return timeOfDay < 12000L;
 	}
 }
